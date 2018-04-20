@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <form method="POST" action="/troubleshoot.html?md=edit&nid{{ obj.id }}">
+        {% csrf_token %}
+        <div>
+            <p>{{ obj.title }}</p>
+            <p>{{ obj.detail }}</p>
+            <p>{{ obj.ctime }}</p>
+        </div>
+        <textarea name="solution" id="" cols="30" rows="10"></textarea>
+        <input type="submit">
+    </form>
+{% endblock %}
